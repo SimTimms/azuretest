@@ -4,7 +4,7 @@ const port = 4000;
 
 app.get('/', (req, res) => {
   var validationEventType = 'Microsoft.EventGrid.SubscriptionValidationEvent';
-
+  console.log('as');
   for (var events in req.body) {
     var body = req.body[events];
     // Deserialize the event data into the appropriate type based on event type
