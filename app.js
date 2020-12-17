@@ -6,9 +6,10 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 app.post('/', (req, res) => {
-  console.log(req.body.data.authorization);
-  console.log(req.body.data);
   console.log(req.body);
+  console.log(req.body.data);
+  console.log(req.body.data.authorization);
+
   var header = req.get('Aeg-Event-Type');
   if (header && header === 'SubscriptionValidation') {
     var event = req.body[0];
