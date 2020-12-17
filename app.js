@@ -7,7 +7,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/', (req, res) => {
-  console.log('as');
+  console.log(req.body);
   var validationEventType = 'Microsoft.EventGrid.SubscriptionValidationEvent';
 
   for (var events in req.body) {
