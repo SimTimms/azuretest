@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const port = 4000;
 
-app.get('/', (req, res) => {
-  var validationEventType = 'Microsoft.EventGrid.SubscriptionValidationEvent';
+app.post('/', (req, res) => {
   console.log('as');
+  var validationEventType = 'Microsoft.EventGrid.SubscriptionValidationEvent';
+
   for (var events in req.body) {
     var body = req.body[events];
     // Deserialize the event data into the appropriate type based on event type
